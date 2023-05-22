@@ -30,14 +30,14 @@
           ></v-text-field>
         </v-form>
         <v-card-actions class="pa-0">
-            <v-btn elevation="0" block class="pa-5 text-capitalize mb-1" color="yellow darken-1">
+            <v-btn link elevation="0" block class="pa-5 text-capitalize mb-1" color="yellow darken-1" :to="'/dashboard'">
                 Sign in
             </v-btn>
         </v-card-actions>
         <template>
             <div class="d-flex align-center">
-                <router-link to="/forgot" class="me-auto text-caption">Forgot Password</router-link>
-                <router-link to="/regist" class="text-caption">Create Account</router-link>
+                <router-link to="/forgotpass" class="me-auto text-caption">Forgot Password</router-link>
+                <router-link to="/register" class="text-caption">Create Account</router-link>
                 <!-- <a href="#/forgot" class="me-auto text-caption">Forgot password?</a>
                 <a href="#/regist" class="text-caption">Create Account</a> -->
             </div>

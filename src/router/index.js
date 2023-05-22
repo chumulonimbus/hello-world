@@ -1,76 +1,57 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import FormLogin from '../components/FormLogin.vue'
-import FormRegist from '../components/FormRegist.vue'
-// import FormForgotPass from '../components/FormForgotPass.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'dashboard',
-    component: () => import('../pages/Dashboard.vue')
+    component: () => import('../pages/FrontPage.vue'),
+    children:[
+      {
+        path: '',
+        name: 'login.login',
+        component: () => import('../components/FormLogin.vue')
+      },
+      {
+        path: 'register',
+        name: 'login.register',
+        component: () => import('../components/FormRegist.vue')
+      },
+      {
+        path: 'forgotpass',
+        name: 'login.forgotpass',
+        component: () => import('../components/FormForgotPass.vue')
+      }
+    ]
   },
   {
-    path: '/forgot',
-    name: 'forgot',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/FormForgotPass.vue')
-    // component: FormForgotPass
+    path: '/dashboard',
+    // name: 'dashboard',
+    component: () => import('../pages/Dashboard.vue'),
+    children:[
+      {
+        path: '',
+        name: 'dashboard.dashboard',
+        component: () => import('../components/ContentDashboard.vue')
+      },
+      {
+        path: '/report',
+        name: 'dashboard.report',
+        component: () => import('../components/ContentReport.vue')
+      },
+      {
+        path: '/performance',
+        name: 'dashboard.performance',
+        component: () => import('../components/ContentPerformance.vue')
+      },
+      {
+        path: '/payroll',
+        name: 'dashboard.payroll',
+        component: () => import('../components/ContentPayroll.vue')
+      }
+    ]
   },
-  {
-    path: '/regist',
-    name: 'regist',
-    component: FormRegist
-  },
-  {
-    path: '/jobover',
-    name: 'jobover',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../viewmaiden/JobOver.vue')
-    // component: FormForgotPass
-  },
-  {
-    path: '/authform',
-    name: 'authform',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../viewmaiden/AuthorizationForm.vue')
-    // component: FormForgotPass
-  },
-  {
-    path: '/safetyagreefil',
-    name: 'safetyagreefil',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../viewmaiden/SafetyAgreementFilipino.vue')
-    // component: FormForgotPass
-  },
-  {
-    path: '/safetyagreein',
-    name: 'safetyagreein',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../viewmaiden/SafetyAgreementIndo.vue')
-    // component: FormForgotPass
-  },
-  {
-    path: '/serviceagreement',
-    name: 'serviceagreement',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../viewmaiden/ServiceAgreement.vue')
-    // component: FormForgotPass
-  }
 ]
 
 const router = new VueRouter({
