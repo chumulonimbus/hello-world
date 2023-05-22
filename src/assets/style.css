@@ -1,0 +1,42 @@
+.v-application{
+    background-color: #f7f7f7 !important;
+    color: #272B30 !important;
+}
+.border-b-0 .v-input__slot::before {
+    border-style: none !important;
+}
+.v-input.v-input--hide-details{
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+.bordered{
+    border: 1px solid #CED4DA;
+}
+.v-text-field__slot input{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.bg-neutral{
+    background-color: #CED4DA;
+}
+.red-text-primary{
+    color: #CE2138;
+}
+.v-label{
+    font-size: 0.75rem !important;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.0333333333em !important;
+}
+
+hr{
+    border: none;
+    background-color: #CED4DA;
+    height: 1px;
+}
+.text-625rem{
+    font-size: .625rem !important;
+}
+.text-caption, .v-text-field__slot input{
+    line-height: 1.5rem !important;
+}
